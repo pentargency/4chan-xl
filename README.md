@@ -1,4 +1,4 @@
-![screenshot](https://ccd0.github.io/4chan-x/img/screenshot.png)
+![screenshot](https://pentargency.github.io/4chan-x/img/screenshot.png)
 # 4chan X
 4chan X is a script that adds various features to anonymous imageboards. It was originally developed for 4chan but has no affiliation with it.
 
@@ -12,7 +12,7 @@ https://github.com/KevinParnell/OneeChan.
 
 **Private browsing**: By default, 4chan X remembers your last read post in a thread and which posts were made by you, even if you are in private browsing / incognito mode. If you want to turn this off, uncheck the `Remember Last Read Post` and `Remember Your Posts` options in the settings panel. You can clear all 4chan browsing history saved by 4chan X by resetting your settings.
 
-Use of the "Link Title" feature to fetch titles of Youtube links is subject to Youtube's [Terms of Service](https://www.youtube.com/t/terms) and [Privacy Policy](http://www.google.com/policies/privacy). For more details on what information is sent to Youtube and other sites, and how to turn it off if you don't want the feature, see 4chan X's [privacy documentation](https://github.com/ccd0/4chan-x/wiki/Privacy).
+Use of the "Link Title" feature to fetch titles of Youtube links is subject to Youtube's [Terms of Service](https://www.youtube.com/t/terms) and [Privacy Policy](http://www.google.com/policies/privacy). For more details on what information is sent to Youtube and other sites, and how to turn it off if you don't want the feature, see 4chan X's [privacy documentation](https://github.com/pentargency/4chan-x/wiki/Privacy).
 
 ## Install
 
@@ -69,25 +69,25 @@ Several minimal browsers have support for userscripts and can run 4chan X. Due t
 Install [Tampermonkey](https://www.microsoft.com/en-us/store/p/tampermonkey/9nblggh5162s), then **[click here to install 4chan X](https://www.4chan-x.net/builds/4chan-X.user.js)**.
 
 ### Other browsers
-4chan X can be used in some browsers that do not support userscripts using [a local proxy](https://github.com/ccd0/4chan-x-proxy). Not all features will work.
+4chan X can be used in some browsers that do not support userscripts using [a local proxy](https://github.com/pentargency/4chan-x-proxy). Not all features will work.
 
 ## Beta version
-New features and non-urgent bugfixes are released on the beta channel for further testing before they are moved the stable version. Please [report](https://github.com/ccd0/4chan-x/issues?q=is%3Aopen+sort%3Aupdated-desc) any issues you find, and be sure to mention which version you're using. You should back up your settings regularly to prevent them from being lost due to bugs.
+New features and non-urgent bugfixes are released on the beta channel for further testing before they are moved the stable version. Please [report](https://github.com/pentargency/4chan-x/issues?q=is%3Aopen+sort%3Aupdated-desc) any issues you find, and be sure to mention which version you're using. You should back up your settings regularly to prevent them from being lost due to bugs.
 
 To install the **beta** version and get updates whenever there's a new **beta** version:
 - [Install userscript](https://www.4chan-x.net/builds/4chan-X-beta.user.js) (use with Greasemonkey / Violentmonkey / Tampermonkey / JS Blocker / etc.)
 - [Download Chrome extension](https://www.4chan-x.net/builds/4chan-X-beta.crx) (download and drag to `chrome://extensions`)
 
 To install the current **beta** version but get updates from the **stable** channel (for example, if just you want a particular recent feature):
-- [Install userscript](https://github.com/ccd0/4chan-x/raw/beta/builds/4chan-X.user.js)
-- [Download Chrome extension](https://github.com/ccd0/4chan-x/raw/beta/builds/4chan-X.crx)
+- [Install userscript](https://github.com/pentargency/4chan-x/raw/beta/builds/4chan-X.user.js)
+- [Download Chrome extension](https://github.com/pentargency/4chan-x/raw/beta/builds/4chan-X.crx)
 
 ## Troubleshooting
-If you encounter a bug, try the steps [here](https://github.com/ccd0/4chan-x/blob/master/CONTRIBUTING.md#reporting-bugs), then report it to the [issue tracker](https://github.com/ccd0/4chan-x/issues?q=is%3Aopen+sort%3Aupdated-desc). If the bug seems to be caused by a script update, you can install a old version from the [changelog](https://github.com/ccd0/4chan-x/blob/master/CHANGELOG.md).
+If you encounter a bug, try the steps [here](https://github.com/pentargency/4chan-x/blob/master/CONTRIBUTING.md#reporting-bugs), then report it to the [issue tracker](https://github.com/pentargency/4chan-x/issues?q=is%3Aopen+sort%3Aupdated-desc). If the bug seems to be caused by a script update, you can install a old version from the [changelog](https://github.com/pentargency/4chan-x/blob/master/CHANGELOG.md).
 
 ## More information
-- [Changelog](https://github.com/ccd0/4chan-x/blob/master/CHANGELOG.md)
-- [Frequently Asked Questions](https://github.com/ccd0/4chan-x/wiki/Frequently-Asked-Questions)
-- [Report Bugs](https://github.com/ccd0/4chan-x/issues)
-- [Contributing](https://github.com/ccd0/4chan-x/blob/master/CONTRIBUTING.md)
+- [Changelog](https://github.com/pentargency/4chan-x/blob/master/CHANGELOG.md)
+- [Frequently Asked Questions](https://github.com/pentargency/4chan-x/wiki/Frequently-Asked-Questions)
+- [Report Bugs](https://github.com/pentargency/4chan-x/issues)
+- [Contributing](https://github.com/pentargency/4chan-x/blob/master/CONTRIBUTING.md)
 

@@ -5,7 +5,7 @@
 // @minFFVer     26
 // @namespace    4chan-X
 // @description  4chan X is a script that adds various features to anonymous imageboards.
-// @license      MIT; https://github.com/ccd0/4chan-x/blob/master/LICENSE 
+// @license      MIT; https://github.com/pentargency/4chan-x/blob/master/LICENSE 
 // @include      http://boards.4chan.org/*
 // @include      https://boards.4chan.org/*
 // @include      http://sys.4chan.org/*
