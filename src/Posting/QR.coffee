@@ -218,11 +218,18 @@ QR =
   setRandomizedFilename: (enabled) ->
     Conf['Randomize Filename'] = enabled
     QR.nodes.randomizedFilename.classList.toggle 'disabled', !enabled
-    if enabled and QR.posts.length == 1
-      for post in QR.posts when post.file
-        post.randomizeFilename()
-        post.saveFilename()
-        post.showFileData()
+		if QR.posts.length == 1
+			if enabled
+				for post in QR.posts when post.file
+					post.randomizeFilename()
+					post.saveFilename()
+					post.showFileData()
+			else # !enabled
+				for post in QR.posts when post.file
+					post.useFileFilename()
+					post.saveFilename()
+					post.showFileData()
+
 
   toggleRandomizedFilename: ->
     enabled = $.hasClass QR.nodes.randomizedFilename, 'disabled'

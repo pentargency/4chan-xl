@@ -210,11 +210,14 @@ QR.post = class
     @filename  = "#{Date.now() - Math.floor(Math.random() * 365 * $.DAY)}"
     @filename += ext[0] if ext = @file.name.match QR.validExtension
 
+	useFileFilename: ->
+		@filename = @file.name
+
   setFile: (@file) ->
     if Conf['Randomize Filename'] and g.BOARD.ID isnt 'f'
       @randomizeFilename()
     else
-      @filename  = @file.name
+      @useFileFilename()
     @filesize = $.bytesToString @file.size
     @checkSize()
     $.addClass @nodes.el, 'has-file'
@@ -331,6 +334,7 @@ QR.post = class
     return if @isLocked
     delete @file
     delete @filename
+		delete @filenameOriginal
     delete @filesize
     @nodes.el.removeAttribute 'title'
     QR.nodes.filename.removeAttribute 'title'
