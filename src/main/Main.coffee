@@ -12,7 +12,7 @@ Main =
     try
       return if window.frameElement and window.frameElement.src in ['', 'about:blank']
 
-    # Detect multiple copies of 4chan X
+    # Detect multiple copies of 4chan XX
     return if doc and $.hasClass(doc, 'fourchan-x')
     $.asap docSet, ->
       $.addClass doc, 'fourchan-x', 'seaweedchan'

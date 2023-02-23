@@ -3,9 +3,9 @@
 // @version      1.14.22.1
 // @minGMVer     1.14
 // @minFFVer     26
-// @namespace    4chan-X
+// @namespace    4chan-XX
 // @description  4chan X is a script that adds various features to anonymous imageboards.
-// @license      MIT; https://github.com/pentargency/4chan-x/blob/master/LICENSE 
+// @license      MIT; https://github.com/pentargency/4chan-xx/blob/master/LICENSE 
 // @include      http://boards.4chan.org/*
 // @include      https://boards.4chan.org/*
 // @include      http://sys.4chan.org/*
@@ -106,7 +106,7 @@
 // @grant        GM.openInTab
 // @grant        GM.xmlHttpRequest
 // @run-at       document-start
-// @updateURL    https://www.4chan-x.net/builds/4chan-X-beta.meta.js
-// @downloadURL  https://www.4chan-x.net/builds/4chan-X-beta.user.js
+// @updateURL    https://4chan-xx.kickin.rocks/builds/4chan-XX-beta.meta.js4chan-XX
+// @downloadURL  https://4chan-xx.kickin.rocks/builds/4chan-X-beta.user.js
 // @icon         data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAMAAABg3Am1AAAACVBMVEUAAGcAAABmzDNZt9VtAAAAAXRSTlMAQObYZgAAAF5JREFUeNrtkTESABAQxPD/R6tsE2dUGYUtFJvLDKf93KevHJAjpBorAQWSBIKqFASC4G0pCAkm4GfaEvgYXl0T6HBaE97f0vmnfYHbZOMLZCx9ISdKWwjOWZSC8GYm4SUGwfYgqI4AAAAASUVORK5CYII=
 // ==/UserScript==

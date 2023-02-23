@@ -1,10 +1,10 @@
 {
   "addons": {
-    "4chan-x@4chan-x.net": {
+    "4chan-xx@4chan-xx.kickin.rocks": {
       "updates": [
         {
           "version": "1.14.22.1",
-          "update_link": "https://www.4chan-x.net/builds/4chan-X-beta.crx"
+          "update_link": "https://4chan-xx.kickin.rocks/builds/4chan-XX-beta.crx"
         }
       ]
     }
