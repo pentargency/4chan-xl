@@ -40,9 +40,9 @@ Ports of Greasemonkey are available for [SeaMonkey](https://sourceforge.net/proj
 
 **Chrome extension**: 4chan X is also available as a standalone Chrome extension. The Chrome extension has the additional feature of being able to sync your settings and data with other devices via Chrome Sync. But there is an issue when the script updates: Whenever the Chrome extension is updated, until you hard refresh (F5) the tab, 4chan X is unable to save any data (such as posts marked as yours and settings changes). The userscript version above does not have this problem when 4chan X updates, only when Violentmonkey / Tampermonkey is updated. To install as a Chrome extension:
 
-- **Chromium**, **Vivaldi**: **[Download 4chan XX](https://4chan-xx.kickin.rocks/builds/4chan-XX.crx)**, then open `chrome://extensions` and drag the downloaded file onto the page. Alternatively, you can install 4chan X from the **[Chrome store](https://chrome.google.com/webstore/detail/ohnjgmpcibpbafdlkimncjhflgedgpam)**.
+- **Chromium**, **Vivaldi**: **[Download 4chan XX](https://4chan-xx.kickin.rocks/builds/4chan-XX.crx)**, then open `chrome://extensions` and drag the downloaded file onto the page.
 - **Opera**: **[Click to install 4chan XX](https://4chan-xx.kickin.rocks/builds/4chan-XX.crx)**, then follow the prompts to activate it in your extension manager.
-- **Chrome**: Install 4chan X from the **[Chrome store](https://chrome.google.com/webstore/detail/ohnjgmpcibpbafdlkimncjhflgedgpam)**.
+- **Chrome**: **[Download 4chan XX](https://4chan-xx.kickin.rocks/builds/4chan-XX.crx)**, then open `chrome://extensions` and drag the downloaded file onto the page.
 
 Note: This version of 4chan X does not work with Opera 12. If you need Opera 12 support, try [loadletter's fork](https://github.com/loadletter/4chan-x) instead.
 
