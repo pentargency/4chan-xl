@@ -38,14 +38,6 @@ Ports of Greasemonkey are available for [SeaMonkey](https://sourceforge.net/proj
 ### Chromium
 **Userscript**: Install [Violentmonkey](https://chrome.google.com/webstore/detail/violent-monkey/jinjaccalgkegednnccohejagnlnfdag) or [Tampermonkey](https://tampermonkey.net/), then **[click here to install 4chan XL](https://4chan-xl.kickin.rocks/builds/4chan-XL.user.js)**.
 
-**Chrome extension**: 4chan XL is also available as a standalone Chrome extension. The Chrome extension has the additional feature of being able to sync your settings and data with other devices via Chrome Sync. But there is an issue when the script updates: Whenever the Chrome extension is updated, until you hard refresh (F5) the tab, 4chan XL is unable to save any data (such as posts marked as yours and settings changes). The userscript version above does not have this problem when 4chan XL updates, only when Violentmonkey / Tampermonkey is updated. To install as a Chrome extension:
-
-- **Chromium**, **Vivaldi**: **[Download 4chan XL](https://4chan-xl.kickin.rocks/builds/4chan-XL.crx)**, then open `chrome://extensions` and drag the downloaded file onto the page.
-- **Opera**: **[Click to install 4chan XL](https://4chan-xl.kickin.rocks/builds/4chan-XL.crx)**, then follow the prompts to activate it in your extension manager.
-- **Chrome**: **[Download 4chan XL](https://4chan-xl.kickin.rocks/builds/4chan-XL.crx)**, then open `chrome://extensions` and drag the downloaded file onto the page.
-
-Note: This version of 4chan XL does not work with Opera 12. If you need Opera 12 support, try [loadletter's fork](https://github.com/loadletter/4chan XL) instead.
-
 ### Safari
 Install the [Userscripts](https://itunes.apple.com/us/app/userscripts/id1463298887) extension. Enable it by pressing `⌘,`, navigating to the extensions pane and checking `Userscripts` checkbox. Now open the Userscripts editor by clicking on the `</>` button in the taskbar. Then click on the `+` button and select the `New Javascript` option. Replace the default text with the contents of the 4chan XL **[script](https://4chan-xl.kickin.rocks/builds/4chan-XL.user.js)**. Finally save it by pressing `⌘s`.
 
@@ -90,11 +82,9 @@ New features and non-urgent bugfixes are released on the beta channel for furthe
 
 To install the **beta** version and get updates whenever there's a new **beta** version:
 - [Install userscript](https://4chan-xl.kickin.rocks/builds/4chan-XL-beta.user.js) (use with Greasemonkey / Violentmonkey / Tampermonkey / JS Blocker / etc.)
-- [Download Chrome extension](https://4chan-xl.kickin.rocks/builds/4chan-XL-beta.crx) (download and drag to `chrome://extensions`)
 
 To install the current **beta** version but get updates from the **stable** channel (for example, if just you want a particular recent feature):
 - [Install userscript](https://github.com/pentargency/4chan-xl/raw/beta/builds/4chan-XL.user.js)
-- [Download Chrome extension](https://github.com/pentargency/4chan-xl/raw/beta/builds/4chan-XL.crx)
 
 ## Troubleshooting
 If you encounter a bug, try the steps [here](https://github.com/pentargency/4chan-xl/blob/master/CONTRIBUTING.md#reporting-bugs), then report it to the [issue tracker](https://github.com/ccd0/4chan-x/issues?q=is%3Aopen+sort%3Aupdated-desc). If the bug seems to be caused by a script update, you can install a old version from the [changelog](https://github.com/pentargency/4chan-xl/blob/master/CHANGELOG.md).
