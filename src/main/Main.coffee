@@ -12,7 +12,7 @@ Main =
     try
       return if window.frameElement and window.frameElement.src in ['', 'about:blank']
 
-    # Detect multiple copies of 4chan X
+    # Detect multiple copies of 4chan XL
     return if doc and $.hasClass(doc, 'fourchan-x')
     $.asap docSet, ->
       $.addClass doc, 'fourchan-x', 'seaweedchan'
@@ -21,7 +21,7 @@ Main =
       if Main.expectInitFinished
         delete Main.expectInitFinished
       else
-        new Notice 'error', 'Error: Multiple copies of 4chan X are enabled.'
+        new Notice 'error', 'Error: Multiple copies of 4chan XL are enabled.'
         $.addClass doc, 'tainted'
 
     # Detect "mounted" event from Kissu
@@ -66,6 +66,7 @@ Main =
     Conf['archives'] = Redirect.archives
     Conf['selectedArchives'] = $.dict()
     Conf['cooldowns'] = $.dict()
+    Conf['autoWatchLastScan'] = null
     Conf['Index Sort'] = $.dict()
     Conf["Last Long Reply Thresholds #{i}"] = $.dict() for i in [0...2]
     Conf['siteProperties'] = $.dict()
@@ -518,14 +519,14 @@ Main =
       unless nodes[i]
         (cb() if cb)
         return
-      setTimeout softTask, 0 
+      setTimeout softTask, 0
 
     softTask()
 
   handleErrors: (errors) ->
-    # Detect conflicts with 4chan X v2
+    # Detect conflicts with 4chan XL v2
     if d.body and $.hasClass(d.body, 'fourchan_x') and not $.hasClass(doc, 'tainted')
-      new Notice 'error', 'Error: Multiple copies of 4chan X are enabled.'
+      new Notice 'error', 'Error: Multiple copies of 4chan XL are enabled.'
       $.addClass doc, 'tainted'
 
     # Detect conflicts with native extension
@@ -694,6 +695,7 @@ Main =
     ['Thread Updater',            ThreadUpdater]
     ['Thread Watcher',            ThreadWatcher]
     ['Thread Watcher (Menu)',     ThreadWatcher.menu]
+    ['Auto Watcher',              AutoWatcher]
     ['Mark New IPs',              MarkNewIPs]
     ['Index Navigation',          Nav]
     ['Keybinds',                  Keybinds]

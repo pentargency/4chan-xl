@@ -193,7 +193,7 @@ Config =
       ]
       'Filter in Native Catalog': [
         true
-        'Apply 4chan X filters in native catalog.'
+        'Apply 4chan XL filters in native catalog.'
         1
       ]
       'MD5 Quick Filter Notifications': [
@@ -212,6 +212,10 @@ Config =
       'Reply Hiding Buttons': [
         true
         'Add buttons to hide single replies.'
+      ]
+      'Always Show Highlighted Threads': [
+        false
+        'Make thread highlighting override hiding.'
       ]
       'Stubs': [
         true
@@ -491,6 +495,11 @@ Config =
         'Set the filename to a random timestamp within the past year. Disabled on /f/.'
         1
       ]
+      'Randomize Filename Button': [
+        false
+        'Show a button on the Quick Reply to randomize the filename.'
+        1
+      ]
       'Show New Thread Option in Threads': [
         true
         'Show the option to post a new / different thread from inside a thread.'
@@ -607,6 +616,10 @@ Config =
       'Quote Threading': [
         true
         'Add option in header menu to thread conversations.'
+      ]
+      'Avoid Duplicated Quotes': [
+        false
+        'Avoid adding duplicate instances of a given post number when quoting with selected text'
       ]
 
   imageExpansion:
@@ -778,6 +791,7 @@ Config =
     https://yandex.com/images/search?rpt=imageview&url=%IMG
     #//tineye.com/search?url=%IMG
     #//www.bing.com/images/search?q=imgurl:%IMG&view=detailv2&iss=sbi#enterInsights
+    #https://lens.google.com/uploadbyurl?url=%IMG;text:lens
 
     # Specialized reverse image search:
     //iqdb.org/?url=%IMG
@@ -1114,6 +1128,14 @@ Config =
     'Next Post Quoting You': [
       'Alt+Down'
       'Scroll to the next post that quotes you.'
+    ]
+    'Next filter highlight': [
+      'Shift+Alt+Down'
+      'Scroll to the next filter-highlighted post.'
+    ]
+    'Previous filter highlight': [
+      'Shift+Alt+Up'
+      'Scroll to the previous filter-highlighted post.'
     ]
 
   updater:

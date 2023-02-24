@@ -78,10 +78,12 @@ Filter =
           else
             types = ['subject', 'name', 'filename', 'comment']
 
-        # Hide the post (default case).
-        hide = !(hl or noti)
+        watch = /(?:^|;)\s*watch/.test filter
 
-        filter = {isstring, regexp, boards, excludes, mask, hide, stub, hl, top, noti}
+        # Hide the post (default case).
+        hide = !(hl or noti or watch)
+
+        filter = {isstring, regexp, boards, excludes, mask, hide, stub, hl, top, noti, watch}
         if key is 'general'
           for type in types
             (@filters[type] or= []).push filter
@@ -119,11 +121,12 @@ Filter =
 
   test: (post, hideable=true) ->
     return post.filterResults if post.filterResults
-    hide = false
-    stub = true
-    hl   = undefined
-    top  = false
-    noti = false
+    hide  = false
+    stub  = true
+    hl    = undefined
+    top   = false
+    noti  = false
+    watch = false
     if QuoteYou.isYou(post)
       hideable = false
     mask = (if post.isReply then 2 else 1)
@@ -147,16 +150,21 @@ Filter =
             unless hl and filter.hl in hl
               (hl or= []).push filter.hl
             top or= filter.top
+            if filter.hl and Conf['Always Show Highlighted Threads']
+              hide = false
+              hideable = false
             if filter.noti
               noti = true
+            if filter.watch
+              watch = true
     if hide
       {hide, stub}
     else
-      {hl, top, noti}
+      {hl, top, noti, watch}
 
   node: ->
     return if @isClone
-    {hide, stub, hl, top, noti} = Filter.test @, (!@isFetchedQuote and (@isReply or g.VIEW is 'index'))
+    {hide, stub, hl, top, noti, watch} = Filter.test @, (!@isFetchedQuote and (@isReply or g.VIEW is 'index'))
     if hide
       if @isReply
         PostHiding.hide @, stub
@@ -164,10 +172,14 @@ Filter =
         ThreadHiding.hide @thread, stub
     else
       if hl
+        @thread.isHighlighted = true
         @highlights = hl
         $.addClass @nodes.root, hl...
     if noti and Unread.posts and (@ID > Unread.lastReadPost) and not QuoteYou.isYou(@)
       Unread.openNotification @, ' triggered a notification filter'
+    if watch and !ThreadWatcher.isWatched(@thread)
+      ThreadWatcher.add(@thread)
+
 
   catalog: ->
     return unless (url = g.SITE.urls.catalogJSON?(g.BOARD))
@@ -400,3 +412,39 @@ Filter =
 
       Filter.addFilter type, res, ->
         Filter.showFilters type
+
+  cb:
+    seek: (type) ->
+      {highlight} = g.SITE.classes
+      $.rmClass highlighted, highlight if (highlighted = $ ".#{highlight}")
+
+      unless Filter.lastRead and doc.contains(Filter.lastRead) and $.hasClass(Filter.lastRead, 'filter-highlight')
+        if not (post = Filter.lastRead = $ '.filter-highlight')
+          new Notice 'warning', 'No posts match your lame filters.', 20
+          return
+        return if Filter.cb.scroll post
+      else
+        post = Filter.lastRead
+
+      str = "#{type}::div[contains(@class,'filter-highlight')]"
+
+      while (post = (result = $.X(str, post)).snapshotItem(if type is 'preceding' then result.snapshotLength - 1 else 0))
+        return if Filter.cb.scroll post
+
+      posts = $$ '.filter-highlight'
+      Filter.cb.scroll posts[if type is 'following' then 0 else posts.length - 1]
+
+    scroll: (root) ->
+      post = Get.postFromRoot root
+      if !post.nodes.post.getBoundingClientRect().height
+        return false
+      else
+        Filter.lastRead = root
+        location.href = Get.url('post', post)
+        Header.scrollTo post.nodes.post
+        if post.isReply
+          sel = "#{g.SITE.selectors.postContainer}#{g.SITE.selectors.highlightable.reply}"
+          node = post.nodes.root
+          node = $ sel, node unless node.matches(sel)
+          $.addClass node, g.SITE.classes.highlight
+        return true

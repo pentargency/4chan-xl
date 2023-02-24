@@ -215,6 +215,28 @@ QR =
     QR.setCustomCooldown enabled
     $.set 'customCooldownEnabled', enabled
 
+  setRandomizedFilename: (enabled) ->
+    Conf['Randomize Filename'] = enabled
+    QR.nodes.randomizedFilename.classList.toggle 'disabled', !enabled
+    if QR.posts.length is 1
+      if enabled
+        for post in QR.posts when post.file
+          post.randomizeFilename()
+          post.saveFilename()
+          post.showFileData()
+      else # !enabled
+        for post in QR.posts when post.file
+          post.useFileFilename()
+          post.saveFilename()
+          post.showFileData()
+
+
+  toggleRandomizedFilename: ->
+    enabled = $.hasClass QR.nodes.randomizedFilename, 'disabled'
+    QR.setRandomizedFilename enabled
+    $.set 'Randomize Filename', enabled
+
+
   error: (err, focusOverride) ->
     QR.open()
     if typeof err is 'string'
@@ -293,7 +315,8 @@ QR =
     {root} = post.nodes
     postRange = new Range()
     postRange.selectNode root
-    text = if post.board.ID is g.BOARD.ID then ">>#{post}\n" else ">>>/#{post.board}/#{post}\n"
+    quoteBacklink = if post.board.ID is g.BOARD.ID then ">>#{post}\n" else ">>>/#{post.board}/#{post}\n"
+    quoteText = ""
     for i in [0...sel.rangeCount]
       range = sel.getRangeAt i
       # Trim range to be fully inside post
@@ -323,12 +346,20 @@ QR =
       for node in $$ '.embedder', frag
         $.rm node.previousSibling if node.previousSibling?.nodeValue is ' '
         $.rm node
-      text += ">#{frag.textContent.trim()}\n"
+      quoteText = ">#{frag.textContent.trim()}\n"
 
     QR.openPost()
     {com, thread} = QR.nodes
     thread.value = Get.threadFromNode @ unless com.value
 
+    text = quoteBacklink
+    if quoteText != ""
+      alreadyQuoted = com.value.includes quoteBacklink
+      if !Conf['Avoid Duplicated Quotes'] or !alreadyQuoted
+        text = quoteBacklink + quoteText
+      else
+        text = quoteText
+    
     wasOnlyQuotes = QR.selected.isOnlyQuotes()
 
     caretPos = com.selectionStart
@@ -528,6 +559,7 @@ QR =
     setNode 'urlButton',      '#url-button'
     setNode 'pasteArea',      '#paste-area'
     setNode 'customCooldown', '#custom-cooldown-button'
+    setNode 'randomizedFilename', '#randomize-filename-button'
     setNode 'dumpButton',     '#dump-button'
     setNode 'status',         '[type=submit]'
     setNode 'flashTag',       '[name=filetag]'
@@ -547,6 +579,12 @@ QR =
       $.get 'customCooldownEnabled', Conf['customCooldownEnabled'], ({customCooldownEnabled}) ->
         QR.setCustomCooldown customCooldownEnabled
         $.sync 'customCooldownEnabled', QR.setCustomCooldown
+
+    if Conf['Randomize Filename Button']
+      QR.nodes.randomizedFilename.hidden = false
+      $.get 'Randomize Filename', Conf['Randomize Filename'], ({'Randomize Filename': randomizeFilenameEnabled}) ->
+        QR.setRandomizedFilename randomizeFilenameEnabled
+        $.sync 'Randomize Filename', QR.setRandomizedFilename
 
     QR.flagsInput()
 
@@ -568,6 +606,7 @@ QR =
     $.on nodes.fileRM,         'click',     -> QR.selected.rmFile()
     $.on nodes.urlButton,      'click',     -> QR.handleUrl ''
     $.on nodes.customCooldown, 'click',     QR.toggleCustomCooldown
+    $.on nodes.randomizedFilename, 'click', QR.toggleRandomizedFilename
     $.on nodes.dumpButton,     'click',     -> nodes.el.classList.toggle 'dump'
     $.on nodes.fileInput,      'change',    QR.handleFiles
 

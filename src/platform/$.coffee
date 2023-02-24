@@ -91,7 +91,7 @@ $.ajax = do ->
       $.extend r, {onloadend, timeout, responseType, withCredentials}
       $.extend r.upload, {onprogress}
       # connection error or content blocker
-      $.on r, 'error', -> (c.warn "4chan X failed to load: #{url}" unless r.status)
+      $.on r, 'error', -> (c.warn "4chan XL failed to load: #{url}" unless r.status)
       <% if (type === 'crx') { %>
       # XXX https://bugs.chromium.org/p/chromium/issues/detail?id=920638
       $.on r, 'load', ->
@@ -139,7 +139,7 @@ do ->
           document.dispatchEvent new CustomEvent '4chanXAjaxLoadend', {bubbles: true, detail}
         # connection error or content blocker
         r.onerror = ->
-          console.warn "4chan X failed to load: #{url}" unless r.status
+          console.warn "4chan XL failed to load: #{url}" unless r.status
         if form
           fd = new FormData()
           for entry in form
@@ -552,7 +552,7 @@ $.crxWorking = ->
       return true
   unless $.crxWarningShown
     msg = $.el 'div',
-      `<%= html('4chan X seems to have been updated. You will need to <a href="javascript:;">reload</a> the page.') %>`
+      `<%= html('4chan XL seems to have been updated. You will need to <a href="javascript:;">reload</a> the page.') %>`
     $.on $('a', msg), 'click', -> location.reload()
     new Notice 'warning', msg
     $.crxWarningShown = true

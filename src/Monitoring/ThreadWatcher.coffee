@@ -136,6 +136,12 @@ ThreadWatcher =
       for a in $$ '.dead-thread > a.watcher-link', ThreadWatcher.list
         $.open a.href
       $.event 'CloseMenu'
+    clear: ->
+      return unless confirm "Delete ALL threads from watcher?"
+      for {siteID, boardID, threadID} in ThreadWatcher.getAll()
+        ThreadWatcher.db.delete {siteID, boardID, threadID}
+      ThreadWatcher.refresh()
+      $.event 'CloseMenu'
     pruneDeads: ->
       return if $.hasClass @, 'disabled'
       for {siteID, boardID, threadID, data} in ThreadWatcher.getAll() when data.isDead
@@ -561,7 +567,7 @@ ThreadWatcher =
     data.excerpt = Get.threadExcerpt thread if thread.OP
     ThreadWatcher.addRaw boardID, threadID, data, cb
 
-  addRaw: (boardID, threadID, data, cb) ->
+  addRaw: (boardID, threadID, data, cb, skipRefresh = false) ->
     oldData = ThreadWatcher.db.get {boardID, threadID, defaultValue: $.dict()}
     delete oldData.last
     delete oldData.modified
@@ -569,6 +575,7 @@ ThreadWatcher =
     ThreadWatcher.db.set {boardID, threadID, val: oldData}, cb
     ThreadWatcher.refresh()
     thread = {siteID: g.SITE.ID, boardID, threadID, data, force: true}
+    return if skipRefresh
     if Conf['Show Page'] and !data.isDead
       ThreadWatcher.fetchBoard [thread]
     else if ThreadWatcher.unreadEnabled and Conf['Show Unread Count']
@@ -629,6 +636,14 @@ ThreadWatcher =
         cb: ThreadWatcher.cb.openDeads
         open: ->
           @el.classList.toggle 'disabled', !$('.dead-thread', ThreadWatcher.list)
+          true
+
+      # `Clear all threads` entry
+      entries.push
+        text: 'Clear all threads'
+        cb: ThreadWatcher.cb.clear
+        open: ->
+          @el.classList.toggle 'disabled', !ThreadWatcher.list.firstElementChild
           true
 
       # `Prune dead threads` entry

@@ -1,6 +1,6 @@
 Settings =
   init: ->
-    # 4chan X settings link
+    # 4chan XL settings link
     link = $.el 'a',
       className:   'settings-link fa fa-wrench'
       textContent: 'Settings'
@@ -23,7 +23,7 @@ Settings =
 
     if g.SITE.software is 'yotsuba' and Conf['Disable Native Extension']
       if $.hasStorage
-        # Run in page context to handle case where 4chan X has localStorage access but not the page.
+        # Run in page context to handle case where 4chan XL has localStorage access but not the page.
         # (e.g. Pale Moon 26.2.2, GM 3.8, cookies disabled for 4chan only)
         $.global ->
           try
