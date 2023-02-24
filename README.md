@@ -1,8 +1,8 @@
 ![screenshot](https://pentargency.github.io/4chan-xl/img/screenshot.png)
 # 4chan XL
-4chan XL is a script that adds various features to anonymous imageboards. It was originally developed for 4chan but has no affiliation with it.
+4chan XL (formerly 4chan X) is a script that adds various features to anonymous imageboards. It was originally developed for 4chan but has no affiliation with it.
 
-It was previously developed by [aeosynth](https://github.com/aeosynth/4chan-x), [Mayhem](https://github.com/MayhemYDG/4chan-x), [ihavenoface](https://github.com/ihavenoface/4chan-x), [Zixaphir](https://github.com/zixaphir/appchan-x), [Seaweed](https://github.com/seaweedchan/4chan-x), and [Spittie](https://github.com/Spittie/4chan-x), [ccd0](https://github.com/ccd0/4chan-x), with contributions from many others.
+It was previously developed by [aeosynth](https://github.com/aeosynth/4chan-x), [Mayhem](https://github.com/MayhemYDG/4chan-x), [ihavenoface](https://github.com/ihavenoface/4chan-x), [Zixaphir](https://github.com/zixaphir/appchan-x), [Seaweed](https://github.com/seaweedchan/4chan-x), [Spittie](https://github.com/Spittie/4chan-x), and [ccd0](https://github.com/ccd0/4chan-x), with contributions from many others.
 
 If you're looking for a maintained fork of OneeChan (a style script used in addition to 4chan XL), try
 https://github.com/KevinParnell/OneeChan.
