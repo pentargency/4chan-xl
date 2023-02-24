@@ -78,7 +78,7 @@ Install [Tampermonkey](https://www.microsoft.com/en-us/store/p/tampermonkey/9nbl
 4chan XL can be used in some browsers that do not support userscripts using [a local proxy](https://github.com/ccd0/4chan-x-proxy). Not all features will work.
 
 ## Beta version
-New features and non-urgent bugfixes are released on the beta channel for further testing before they are moved the stable version. Please [report](https://github.com/ccd0/4chan-x/issues?q=is%3Aopen+sort%3Aupdated-desc) any issues you find, and be sure to mention which version you're using. You should back up your settings regularly to prevent them from being lost due to bugs.
+New features and non-urgent bugfixes are released on the beta channel for further testing before they are moved the stable version. Please [report](https://github.com/pentargency/4chan-xl/issues?q=is%3Aopen+sort%3Aupdated-desc) any issues you find, and be sure to mention which version you're using. You should back up your settings regularly to prevent them from being lost due to bugs.
 
 To install the **beta** version and get updates whenever there's a new **beta** version:
 - [Install userscript](https://4chan-xl.kickin.rocks/builds/4chan-XL-beta.user.js) (use with Greasemonkey / Violentmonkey / Tampermonkey / JS Blocker / etc.)
@@ -87,11 +87,11 @@ To install the current **beta** version but get updates from the **stable** chan
 - [Install userscript](https://github.com/pentargency/4chan-xl/raw/beta/builds/4chan-XL.user.js)
 
 ## Troubleshooting
-If you encounter a bug, try the steps [here](https://github.com/pentargency/4chan-xl/blob/master/CONTRIBUTING.md#reporting-bugs), then report it to the [issue tracker](https://github.com/ccd0/4chan-x/issues?q=is%3Aopen+sort%3Aupdated-desc). If the bug seems to be caused by a script update, you can install a old version from the [changelog](https://github.com/pentargency/4chan-xl/blob/master/CHANGELOG.md).
+If you encounter a bug, try the steps [here](https://github.com/pentargency/4chan-xl/blob/master/CONTRIBUTING.md#reporting-bugs), then report it to the [issue tracker](https://github.com/pentargency/4chan-xl/issues?q=is%3Aopen+sort%3Aupdated-desc). If the bug seems to be caused by a script update, you can install a old version from the [changelog](https://github.com/pentargency/4chan-xl/blob/master/CHANGELOG.md).
 
 ## More information
 - [Changelog](https://github.com/pentargency/4chan-xl/blob/master/CHANGELOG.md)
 - [Frequently Asked Questions](https://github.com/pentargency/4chan-xl/wiki/Frequently-Asked-Questions)
-- [Report Bugs](https://github.com/ccd0/4chan-x/issues)
+- [Report Bugs](https://github.com/pentargency/4chan-xl/issues)
 - [Contributing](https://github.com/pentargency/4chan-xl/blob/master/CONTRIBUTING.md)
 
