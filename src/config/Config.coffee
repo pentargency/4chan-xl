@@ -193,7 +193,7 @@ Config =
       ]
       'Filter in Native Catalog': [
         true
-        'Apply 4chan X filters in native catalog.'
+        'Apply 4chan XL filters in native catalog.'
         1
       ]
       'MD5 Quick Filter Notifications': [

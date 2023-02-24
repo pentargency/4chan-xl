@@ -12,7 +12,7 @@ Main =
     try
       return if window.frameElement and window.frameElement.src in ['', 'about:blank']
 
-    # Detect multiple copies of 4chan XX
+    # Detect multiple copies of 4chan XL
     return if doc and $.hasClass(doc, 'fourchan-x')
     $.asap docSet, ->
       $.addClass doc, 'fourchan-x', 'seaweedchan'
@@ -21,7 +21,7 @@ Main =
       if Main.expectInitFinished
         delete Main.expectInitFinished
       else
-        new Notice 'error', 'Error: Multiple copies of 4chan X are enabled.'
+        new Notice 'error', 'Error: Multiple copies of 4chan XL are enabled.'
         $.addClass doc, 'tainted'
 
     # Detect "mounted" event from Kissu
@@ -524,9 +524,9 @@ Main =
     softTask()
 
   handleErrors: (errors) ->
-    # Detect conflicts with 4chan X v2
+    # Detect conflicts with 4chan XL v2
     if d.body and $.hasClass(d.body, 'fourchan_x') and not $.hasClass(doc, 'tainted')
-      new Notice 'error', 'Error: Multiple copies of 4chan X are enabled.'
+      new Notice 'error', 'Error: Multiple copies of 4chan XL are enabled.'
       $.addClass doc, 'tainted'
 
     # Detect conflicts with native extension

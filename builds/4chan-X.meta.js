@@ -1,11 +1,11 @@
 // ==UserScript==
-// @name         4chan XX
+// @name         4chan XL
 // @version      1.14.23.0
 // @minGMVer     1.14
 // @minFFVer     26
-// @namespace    4chan-XX
-// @description  4chan XX is (another) script that adds various features to anonymous imageboards.
-// @license      MIT; https://github.com/pentargency/4chan-xx/blob/master/LICENSE 
+// @namespace    4chan-XL
+// @description  4chan XL is (another) script that adds various features to anonymous imageboards.
+// @license      MIT; https://github.com/pentargency/4chan-xl/blob/master/LICENSE 
 // @include      http://boards.4chan.org/*
 // @include      https://boards.4chan.org/*
 // @include      http://sys.4chan.org/*
@@ -106,7 +106,7 @@
 // @grant        GM.openInTab
 // @grant        GM.xmlHttpRequest
 // @run-at       document-start
-// @updateURL    https://4chan-xx.kickin.rocks/builds/4chan-XX.meta.js
-// @downloadURL  https://4chan-xx.kickin.rocks/builds/4chan-XX.user.js
+// @updateURL    https://4chan-xl.kickin.rocks/builds/4chan-XL.meta.js
+// @downloadURL  https://4chan-xl.kickin.rocks/builds/4chan-XL.user.js
 // @icon         data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAMAAABg3Am1AAAACVBMVEUAAGcAAABmzDNZt9VtAAAAAXRSTlMAQObYZgAAAF5JREFUeNrtkTESABAQxPD/R6tsE2dUGYUtFJvLDKf93KevHJAjpBorAQWSBIKqFASC4G0pCAkm4GfaEvgYXl0T6HBaE97f0vmnfYHbZOMLZCx9ISdKWwjOWZSC8GYm4SUGwfYgqI4AAAAASUVORK5CYII=
 // ==/UserScript==
