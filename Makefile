@@ -84,10 +84,11 @@ crx_contents := script.js eventPage.js icon16.png icon48.png icon128.png manifes
 
 release := \
  $(foreach f, \
-  $(foreach c,. -beta.,$(name)$(c)crx updates$(c)xml updates$(c)json $(name)$(c)user.js $(name)$(c)meta.js) \
-  $(name)-noupdate.crx \
+	$(name)-beta.user.js \
+	$(name).user.js \
+	$(name)-beta.meta.js \
+	$(name).meta.js \
   $(name)-noupdate.user.js \
-  $(name).zip \
  ,builds/$(f))
 
 script := $(foreach f,$(filter-out %.crx %.zip,$(release)),test$(f)) $(foreach t,crx crx-beta crx-noupdate,$(foreach f,$(crx_contents),testbuilds/$(t)/$(f)))
