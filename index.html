@@ -31,13 +31,6 @@
 <p>Ports of Greasemonkey are available for <a href="https://sourceforge.net/projects/gmport/">SeaMonkey</a> and <a href="https://github.com/janekptacijarabaci/greasemonkey/releases/latest">Pale Moon</a>.</p>
 </div><input hidden type="checkbox" id="chromium-hide"><div><h3 id="chromium"><label for="chromium-hide">Chromium</label></h3>
 <p><strong>Userscript</strong>: Install <a href="https://chrome.google.com/webstore/detail/violent-monkey/jinjaccalgkegednnccohejagnlnfdag">Violentmonkey</a> or <a href="https://tampermonkey.net/">Tampermonkey</a>, then <strong><a href="https://4chan-xl.kickin.rocks/builds/4chan-XL.user.js">click here to install 4chan XL</a></strong>.</p>
-<p><strong>Chrome extension</strong>: 4chan XL is also available as a standalone Chrome extension. The Chrome extension has the additional feature of being able to sync your settings and data with other devices via Chrome Sync. But there is an issue when the script updates: Whenever the Chrome extension is updated, until you hard refresh (F5) the tab, 4chan XL is unable to save any data (such as posts marked as yours and settings changes). The userscript version above does not have this problem when 4chan XL updates, only when Violentmonkey / Tampermonkey is updated. To install as a Chrome extension:</p>
-<ul>
-<li><strong>Chromium</strong>, <strong>Vivaldi</strong>: <strong><a href="https://4chan-xl.kickin.rocks/builds/4chan-XL.crx">Download 4chan XL</a></strong>, then open <code>chrome://extensions</code> and drag the downloaded file onto the page.</li>
-<li><strong>Opera</strong>: <strong><a href="https://4chan-xl.kickin.rocks/builds/4chan-XL.crx">Click to install 4chan XL</a></strong>, then follow the prompts to activate it in your extension manager.</li>
-<li><strong>Chrome</strong>: <strong><a href="https://4chan-xl.kickin.rocks/builds/4chan-XL.crx">Download 4chan XL</a></strong>, then open <code>chrome://extensions</code> and drag the downloaded file onto the page.</li>
-</ul>
-<p>Note: This version of 4chan XL does not work with Opera 12. If you need Opera 12 support, try <a href="https://github.com/loadletter/4chan-x">loadletter's fork</a> instead.</p>
 </div><input hidden type="checkbox" id="safari-hide"><div><h3 id="safari"><label for="safari-hide">Safari</label></h3>
 <p>Install the <a href="https://itunes.apple.com/us/app/userscripts/id1463298887">Userscripts</a> extension. Enable it by pressing <code>⌘,</code>, navigating to the extensions pane and checking <code>Userscripts</code> checkbox. Now open the Userscripts editor by clicking on the <code>&lt;/&gt;</code> button in the taskbar. Then click on the <code>+</code> button and select the <code>New Javascript</code> option. Replace the default text with the contents of the 4chan XL <strong><a href="https://4chan-xl.kickin.rocks/builds/4chan-XL.user.js">script</a></strong>. Finally save it by pressing <code>⌘s</code>.</p>
 </div><input hidden type="checkbox" id="webkitgtk-qtwebkit-qtwebengine-hide"><div><h3 id="webkitgtk-qtwebkit-qtwebengine"><label for="webkitgtk-qtwebkit-qtwebengine-hide">WebKitGTK+ / QtWebKit / QtWebEngine</label></h3>
@@ -79,12 +72,10 @@ wget -P &quot;${XDG_DATA_HOME:-$HOME/.local/share}/uzbl/userscripts&quot; https:
 <p>To install the <strong>beta</strong> version and get updates whenever there's a new <strong>beta</strong> version:</p>
 <ul>
 <li><a href="https://4chan-xl.kickin.rocks/builds/4chan-XL-beta.user.js">Install userscript</a> (use with Greasemonkey / Violentmonkey / Tampermonkey / JS Blocker / etc.)</li>
-<li><a href="https://4chan-xl.kickin.rocks/builds/4chan-XL-beta.crx">Download Chrome extension</a> (download and drag to <code>chrome://extensions</code>)</li>
 </ul>
 <p>To install the current <strong>beta</strong> version but get updates from the <strong>stable</strong> channel (for example, if just you want a particular recent feature):</p>
 <ul>
 <li><a href="https://github.com/pentargency/4chan-xl/raw/beta/builds/4chan-XL.user.js">Install userscript</a></li>
-<li><a href="https://github.com/pentargency/4chan-xl/raw/beta/builds/4chan-XL.crx">Download Chrome extension</a></li>
 </ul>
 <h2 id="troubleshooting">Troubleshooting</h2>
 <p>If you encounter a bug, try the steps <a href="https://github.com/pentargency/4chan-xl/blob/master/CONTRIBUTING.md#reporting-bugs">here</a>, then report it to the <a href="https://github.com/ccd0/4chan-x/issues?q=is%3Aopen+sort%3Aupdated-desc">issue tracker</a>. If the bug seems to be caused by a script update, you can install a old version from the <a href="https://github.com/pentargency/4chan-xl/blob/master/CHANGELOG.md">changelog</a>.</p>
