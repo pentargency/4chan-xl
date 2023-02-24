@@ -1,6 +1,22 @@
 **Note**: Installing the script from one of the links below will disable automatic updates. If you want automatic updates, install the script from the links on the [main page](https://www.4chan-x.net/).
 
--Sometimes the changelog has notes (not comprehensive) acknowledging people's work. This does not mean the changes are their fault, only that their code was used. All changes to the script are chosen by and the fault of the maintainer (ccd0).
+-Sometimes the changelog has notes (not comprehensive) acknowledging people's work. This does not mean the changes are their fault, only that their code was used. All changes to the script are chosen by and the fault of the maintainer (pentargency, previously ccd0).
+
+### v1.14.23
+
+**v1.14.23.0** *(2023-02-24)* - [[Userscript](https://raw.githubusercontent.com/pentargency/4chan-xl/1.14.23.0/builds/4chan-X-noupdate.user.js)]
+- Based on 1.14.22.1.
+- Liveliness of original ccd0 4chan X is uncertain. To remove ambiguity moving forward for myself and others, I'm renaming to 4chan XL
+- Not generating chrome native extensions. Use a userscript manager
+- Adds hotkeys to jump between highlighted posts (via filter) in a thread
+- (paradox460) Add ability to automatically watch threads based on filters
+- (paradox460) Adds option to include reversible 'randomize filename' button to quick reply upload field
+- (Squawks) Add option to allow highlighting to override hiding
+- (4chenz) Display dn (display name) of magnet links instead of displaying whole magnet URI
+- (paradox460) Add option (with confirmation) to delete all threads from thread watcher
+- (4chenz) Add google lens search URL
+- Adds option to avoid adding duplicate post number backlinks if quick-quoting someone's text multiple times
+- Updated several dependencies
 
 ### v1.14.22
 
