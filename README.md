@@ -1,3 +1,10 @@
+# Oh, nevermind.
+[4chan X](https://github.com/ccd0/4chan-x) has had more contributors added, including myself. So, the original script will be maintained with the changes made here, and ***[development will continue, focused on the original 4chan X userscript and repository](https://github.com/ccd0/4chan-x)***.
+
+I will keep this fork synchronized with the upstream 4chan X, and may add additional functionality on top that would not be suitable for the base 4chan X userscript, on an as-needed basis.
+
+---
+
 ![screenshot](https://pentargency.github.io/4chan-xl/img/screenshot.png)
 # 4chan XL
 4chan XL (formerly 4chan X) is a script that adds various features to anonymous imageboards. It was originally developed for 4chan but has no affiliation with it.
